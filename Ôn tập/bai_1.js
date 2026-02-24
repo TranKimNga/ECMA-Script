@@ -5,5 +5,6 @@ while (time > 0) {
     } else {
         console.log(`Con lai ${time} giay`);
     }
+    time--;
 }
 console.log("Het gio");
