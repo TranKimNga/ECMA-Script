@@ -1,5 +1,5 @@
 function printName(name) {
-    console.log(name);
+    console.log(`Hello, ${name}`);
 }
 
-printName("Hello, Nga");
+printName("Nga");
