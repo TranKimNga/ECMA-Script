@@ -1,8 +1,5 @@
-// function printName(name) {
-//     console.log(`Hello, ${name}`);
-// }
+function printName(name) {
+    console.log(`Hello, ${name}`);
+}
 
-// printName("Nga");
-
-
-
+printName("Nga");
