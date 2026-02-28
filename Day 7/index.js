@@ -26,13 +26,8 @@ console.log(friends.length);
 console.log(friends[0]);
 
 friends.unshift("Trâm");
-console.log(friends);
-
 friends.pop();
-console.log(friends);
-
 friends.splice(2, 0, "Hạnh");
-console.log(friends);
 
 for (let i = 0; i < friends.length; i++) {
     console.log(friends[i]);
