@@ -11,7 +11,7 @@ const loopNumbersArray = (number, index) => {
 numbers.forEach(loopNumbersArray);
 */
 
-let provinces = [
+const provinces = [
     "Hà Nội",
     "Đà Lạt",
     "TP. Hồ Chí Minh",
