@@ -20,6 +20,6 @@ let provinces = [
     "Huế",
 ];
 
-provinces.forEach((province, index) => {
+provinces.forEach((province) => {
     console.log(province);
 });
