@@ -2,8 +2,14 @@ const scores = [8, 10, 7, 4, 9, 5.5, 6, 7.5, 3, 2];
 
 const hasFailStudent = scores.some((score) => score < 5);
 
-console.log(`Có bạn nào dưới trung bình không? ${hasFailStudent}`);
+console.log(
+    hasFailStudent
+        ? "Có sinh viên dưới trung bình"
+        : "Không có sinh viên nào dưới trung bình",
+);
 
-const allPassed = scores.every((score) => score >= 5);
+const isAllPassed = scores.every((score) => score >= 5);
 
-console.log(`Toàn bộ lớp có qua môn hay không? ${allPassed}`);
+console.log(
+    isAllPassed ? "Toàn bộ lớp qua môn" : "Vẫn còn sinh viên chưa qua môn",
+);
