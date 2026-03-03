@@ -4,6 +4,6 @@ numbers.forEach((number, index) => {
     console.log(number);
 });
 
-const filteredNumbers = numbers.filter((number, index) => number % 2 === 0);
+const filteredNumbers = numbers.filter((number) => number % 2 === 0);
 
 console.log(filteredNumbers);

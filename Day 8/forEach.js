@@ -1,6 +1,8 @@
 /* 
 1. forEach  => Lặp qua từng phần tử
 2. filter   => Lọc phần tử
+3. some     => Kiểm tra có ít nhất 1 phần tử thỏa mãn điều kiện
+
 */
 
 /*
@@ -20,7 +22,6 @@ provinces.forEach((province) => {
     console.log(province);
 });
 */
-
 // 2. filter
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
