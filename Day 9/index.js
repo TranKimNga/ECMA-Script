@@ -181,28 +181,51 @@ const employees = [
     },
 ];
 
-//1. Filter out employees who do not have a contact phone number
+// //1. Filter out employees who do not have a contact phone number
 
-const noPhoneEmployees = employees.filter(
-    (employee) => employee.phoneNumber === null,
-);
+// const noPhoneEmployees = employees.filter(
+//     (employee) => employee.phoneNumber === null,
+// );
 
-console.log("Employees without phone numbers:");
-console.log(noPhoneEmployees);
+// console.log("Employees without phone numbers:");
+// console.log(noPhoneEmployees);
+
+// const employeeWithoutPhoneNumber = employees.filter((employee) => {
+//     const { phoneNumber } = employee;
+//     return employee.phoneNumber === null;
+// });
+
 //2. Filter out employees who do not have an email address
 
-const noEmailEmployees = employees.filter(
-    (employee) => employee.email === null,
-);
+// const noEmailEmployees = employees.filter(
+//     (employee) => employee.email === null,
+// );
 
-console.log("Employees without email:");
-console.log(noEmailEmployees);
+// console.log("Employees without email:");
+// console.log(noEmailEmployees);
 
 //3. Filter employees who do not have both email and phone number
 
-const noContactEmployees = employees.filter(
-    (employee) => employee.email === null && employee.phoneNumber === null,
-);
+// const noContactEmployees = employees.filter(
+//     (employee) => employee.email === null && employee.phoneNumber === null,
+// );
 
-console.log("Employees without email and phone number:");
-console.log(noContactEmployees);
+// console.log("Employees without email and phone number:");
+// console.log(noContactEmployees);
+
+//4. Transform the email values ​​of employees who do not have email addresses into: id_position@gmail.com
+
+const employeesWithUpdatedEmail = employees.map((employee) => {
+    const { id, position, email } = employee;
+
+    if (!email) {
+        return {
+            ...employee,
+            email: `${id}_${position}@gmail.com`,
+        };
+    }
+
+    return employee;
+});
+console.log("Transform the email values:");
+console.log(employeesWithUpdatedEmail);
