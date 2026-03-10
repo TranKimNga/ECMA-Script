@@ -47,8 +47,23 @@ const employees = [
 ];
 
 //1.
-const dataEmployees = employees.filter((employee) => {
-    return employee.email !== null || employee.phoneNumber !== null;
+const filteredEmployees = employees.filter((employee) => {
+    const { email, phoneNumber } = employee;
+    return email || phoneNumber;
 });
+console.log(filteredEmployees);
 
-console.log(dataEmployees);
+/*2. Yêu cầu 2: Khôi phục dữ liệu (Data Imputation/Transformation)
+       - Từ danh sách hợp lệ ở Yêu cầu 1, đối với những nhân viên bị thiếu email (tức là email đang bằng null), hãy tự động tạo một email mặc định cho họ.
+       - Công thức tạo email: Lấy [id] kết hợp với [position viết thường] + @company.com.
+       - Ví dụ: Nhân viên có id là 2, position là Tester bị thiếu email -> Email mới sẽ là: 2_tester@company.com. Cập nhật email này vào record của nhân viên đó.
+*/
+
+const updatedEmployees = filteredEmployees.map((employee) => ({
+    ...employee,
+    email:
+        employee.email ||
+        `${employee.id}_${employee.position.toLowerCase()}@company.com`,
+}));
+
+console.log(updatedEmployees);
