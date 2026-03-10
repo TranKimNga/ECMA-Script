@@ -59,11 +59,23 @@ console.log(filteredEmployees);
        - Ví dụ: Nhân viên có id là 2, position là Tester bị thiếu email -> Email mới sẽ là: 2_tester@company.com. Cập nhật email này vào record của nhân viên đó.
 */
 
-const updatedEmployees = filteredEmployees.map((employee) => ({
-    ...employee,
-    email:
-        employee.email ||
-        `${employee.id}_${employee.position.toLowerCase()}@company.com`,
-}));
+const updatedEmployeesEmail = filteredEmployees.map((employee) => {
+    const { email, id, position } = employee;
 
-console.log(updatedEmployees);
+    //Cách 1
+    /*
+        if (!email) {
+            employee.email = `${id}_${position.toLowerCase()}@company.com`;
+        }
+
+        return employee;
+    });
+    */
+
+    //Toán tử 3 ngôi
+    return email
+        ? employee
+        : { ...employee, email: `${id}_${position.toLowerCase()}@company.com` };
+});
+
+console.log(updatedEmployeesEmail);
